@@ -2,6 +2,11 @@ import { marked } from 'marked'
 
 import { createFileRoute } from '@tanstack/react-router'
 import { allJobs, allEducations } from 'content-collections'
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr)
+  return date.toLocaleDateString('en-MY', { month: 'short', year: 'numeric' })
+}
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
@@ -62,7 +67,7 @@ function App() {
             Work Experience
           </h2>
           <div className="space-y-6">
-            {allJobs.map((job) => (
+            {[...allJobs].sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()).map((job) => (
               <Card key={job.jobTitle}>
                 <CardHeader>
                   <div className="flex justify-between items-start">
@@ -75,7 +80,7 @@ function App() {
                       </p>
                     </div>
                     <Badge variant="secondary" className="text-sm">
-                      {job.startDate} - {job.endDate || 'Present'}
+                      {formatDate(job.startDate)} – {job.endDate ? formatDate(job.endDate) : 'Present'}
                     </Badge>
                   </div>
                 </CardHeader>
@@ -122,14 +127,28 @@ function App() {
             {allEducations.map((education) => (
               <Card key={education.school}>
                 <CardHeader>
-                  <CardTitle className="text-xl">
-                    {education.school}
-                  </CardTitle>
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-2">
+                      <CardTitle className="text-xl">
+                        {education.school}
+                      </CardTitle>
+                      <p className="font-medium">
+                        {education.summary}
+                      </p>
+                    </div>
+                    <Badge variant="secondary" className="text-sm">
+                      {education.startDate} – {education.endDate || 'Present'}
+                    </Badge>
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="leading-relaxed">
-                    {education.summary}
-                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {education.tags.map((tag) => (
+                      <Badge key={tag} variant="outline">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                   {education.content && (
                     <div
                       className="mt-6 prose prose-sm max-w-none"

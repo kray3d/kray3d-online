@@ -1,20 +1,25 @@
 ---
-jobTitle: HOD, Digital Transformation (myPATIL Initiative)
+jobTitle: Manager, Media & Creative Content
 company: GATES Technology
 location: Cyberjaya, Selangor, Malaysia
-startDate: 2021-01-01
-summary: Leading the Transformation Unit, spearheading Generative AI integration and low-code workflow automation. Drove a 40% increase in creative team production efficiency and a 35% surge in digital system adoption (including the myPATIL initiative) across local authorities (PBT).
+startDate: 2024-09-01
+summary: Leading media and creative content strategy for the myPATIL ecosystem, integrating Generative AI and automated pipelines (n8n) to drive a 40% increase in creative team production efficiency and a 35% surge in digital system adoption across local authorities (PBT).
 tags:
   [
-    "Digital Transformation",
-    "Change Leadership",
+    "Digital Marketing",
+    "Multimedia",
+    "Stakeholder Management",
     "Generative AI",
-    "Workflow Automation",
-    "ADKAR",
-    "Agile/Scrum",
-    "3D Creative Direction",
-    "Blender",
+    "n8n Automation",
+    "Brand Strategy",
+    "Content Production",
   ]
 ---
 
-Leads change management and creative direction for large-scale digital transformation across corporate and government-linked (GLC) ecosystems in Malaysia. Combines Generative AI integration and automated pipelines with 3D/creative production (Blender, game-ready assets) and structured change frameworks (ADKAR, Agile/Scrum) to deliver measurable enterprise results.
+- **High-Level Stakeholder Management:** Orchestrated strategic communication via the newly established "Executive Lounge" channel, aligning digital branding narratives for high-profile public sector leaders, including SU and YDP across multiple local authorities (PBT).
+
+- **Change Leadership & AI Integration:** Spearheaded organizational readiness and a culture shift towards Next-Gen workflows by integrating Generative AI and automated pipelines (n8n), driving a 40% increase in creative team production efficiency.
+
+- **Process Transformation & ROI:** Re-engineered legacy multimedia production workflows for the myPATIL ecosystem, reducing asset turnaround time by 30% while securing 100% brand compliance and contributing to a 35% surge in digital system adoption.
+
+- **Corporate Communication & Strategy:** Directed end-to-end production of high-stakes corporate content (myPATIL Connect Bulletins & Video Insights), positioning the platform as a trusted authority and key enabler in local council digital transformation.

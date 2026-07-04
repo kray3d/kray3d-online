@@ -1,14 +1,14 @@
 ---
-school: School 1
-summary: Degree or Certificate Program
-startDate: 2020-01-01
-endDate: 2020-12-31
+school: Management and Science University (MSU)
+summary: Bachelor's Degree in Information and Communication Technology, Multimedia
+startDate: "2006"
+endDate: "2010"
 tags:
   [
-    "Skill 1",
-    "Skill 2",
-    "Skill 3",
+    "ICT",
+    "Multimedia",
+    "Web Development",
+    "3D Design",
+    "Digital Media",
   ]
 ---
-
-Description of the program and what was learned.
