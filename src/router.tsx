@@ -9,6 +9,7 @@ export const getRouter = () => {
     routeTree,
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    basepath: '/kray3d-online',
   })
 
   return router
