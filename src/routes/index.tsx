@@ -47,7 +47,7 @@ function Home() {
             </div>
           </div>
           <img
-            src="/headshot.png"
+            src={`${import.meta.env.BASE_URL}headshot.png`}
             alt="Kray Mohsin"
             className="w-40 h-40 sm:w-52 sm:h-52 rounded-full object-cover shadow-md"
           />

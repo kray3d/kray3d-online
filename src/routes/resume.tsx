@@ -42,22 +42,15 @@ function App() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-8">
-              <p className="flex-1 leading-relaxed">
-                Strategic Change Management & Creative Lead with 15+ years
-                driving large-scale digital transformation across corporate
-                and government-linked (GLC) ecosystems in Malaysia. I bridge
-                the gap between complex technical deployment and
-                human-centric workflows — combining deep 3D/creative
-                expertise with transformation frameworks like ADKAR and
-                Agile/Scrum to deliver measurable enterprise results.
-              </p>
-              <img
-                src="/headshot.png"
-                alt="Professional headshot"
-                className="w-44 h-52 rounded-2xl object-cover"
-              />
-            </div>
+            <p className="leading-relaxed">
+              Strategic Change Management & Creative Lead with 15+ years
+              driving large-scale digital transformation across corporate
+              and government-linked (GLC) ecosystems in Malaysia. I bridge
+              the gap between complex technical deployment and
+              human-centric workflows — combining deep 3D/creative
+              expertise with transformation frameworks like ADKAR and
+              Agile/Scrum to deliver measurable enterprise results.
+            </p>
           </CardContent>
         </Card>
 

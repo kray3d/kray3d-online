@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 import contentCollections from '@content-collections/vite'
 
 export default defineConfig({
-  base: '/kray3d-online/',
   plugins: [
     contentCollections(),
     viteTsConfigPaths({ projects: ['./tsconfig.json'] }),
