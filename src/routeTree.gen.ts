@@ -10,21 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ResumeRouteImport } from './routes/resume'
-import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AffiliatesRouteImport } from './routes/affiliates'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as ProjectsDigitalLicensingCampaignRouteImport } from './routes/projects/digital-licensing-campaign'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
 const ResumeRoute = ResumeRouteImport.update({
   id: '/resume',
   path: '/resume',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -42,11 +38,22 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsDigitalLicensingCampaignRoute =
+  ProjectsDigitalLicensingCampaignRouteImport.update({
+    id: '/projects/digital-licensing-campaign',
+    path: '/projects/digital-licensing-campaign',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -57,29 +64,32 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/affiliates': typeof AffiliatesRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/projects/digital-licensing-campaign': typeof ProjectsDigitalLicensingCampaignRoute
   '/blog/': typeof BlogIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/affiliates': typeof AffiliatesRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/projects/digital-licensing-campaign': typeof ProjectsDigitalLicensingCampaignRoute
   '/blog': typeof BlogIndexRoute
+  '/projects': typeof ProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/affiliates': typeof AffiliatesRoute
   '/contact': typeof ContactRoute
-  '/projects': typeof ProjectsRoute
   '/resume': typeof ResumeRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/projects/digital-licensing-campaign': typeof ProjectsDigitalLicensingCampaignRoute
   '/blog/': typeof BlogIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -87,38 +97,42 @@ export interface FileRouteTypes {
     | '/'
     | '/affiliates'
     | '/contact'
-    | '/projects'
     | '/resume'
     | '/blog/$slug'
+    | '/projects/digital-licensing-campaign'
     | '/blog/'
+    | '/projects/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/affiliates'
     | '/contact'
-    | '/projects'
     | '/resume'
     | '/blog/$slug'
+    | '/projects/digital-licensing-campaign'
     | '/blog'
+    | '/projects'
   id:
     | '__root__'
     | '/'
     | '/affiliates'
     | '/contact'
-    | '/projects'
     | '/resume'
     | '/blog/$slug'
+    | '/projects/digital-licensing-campaign'
     | '/blog/'
+    | '/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AffiliatesRoute: typeof AffiliatesRoute
   ContactRoute: typeof ContactRoute
-  ProjectsRoute: typeof ProjectsRoute
   ResumeRoute: typeof ResumeRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  ProjectsDigitalLicensingCampaignRoute: typeof ProjectsDigitalLicensingCampaignRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -128,13 +142,6 @@ declare module '@tanstack/react-router' {
       path: '/resume'
       fullPath: '/resume'
       preLoaderRoute: typeof ResumeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -158,11 +165,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/digital-licensing-campaign': {
+      id: '/projects/digital-licensing-campaign'
+      path: '/projects/digital-licensing-campaign'
+      fullPath: '/projects/digital-licensing-campaign'
+      preLoaderRoute: typeof ProjectsDigitalLicensingCampaignRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -179,10 +200,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AffiliatesRoute: AffiliatesRoute,
   ContactRoute: ContactRoute,
-  ProjectsRoute: ProjectsRoute,
   ResumeRoute: ResumeRoute,
   BlogSlugRoute: BlogSlugRoute,
+  ProjectsDigitalLicensingCampaignRoute: ProjectsDigitalLicensingCampaignRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

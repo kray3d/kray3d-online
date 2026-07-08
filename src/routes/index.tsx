@@ -104,17 +104,26 @@ function Home() {
                         Code
                       </a>
                     )}
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800 transition-colors"
-                      >
-                        <ExternalLink size={14} />
-                        Live
-                      </a>
-                    )}
+                    {project.liveUrl &&
+                      (project.liveUrl.startsWith('/') ? (
+                        <a
+                          href={project.liveUrl}
+                          className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                        >
+                          <ArrowRight size={14} />
+                          Case Study
+                        </a>
+                      ) : (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                        >
+                          <ExternalLink size={14} />
+                          Live
+                        </a>
+                      ))}
                   </div>
                 </CardContent>
               </Card>

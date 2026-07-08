@@ -2,9 +2,9 @@ import { createFileRoute } from '@tanstack/react-router'
 import { allProjects } from 'content-collections'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ExternalLink, Github } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 
-export const Route = createFileRoute('/projects')({
+export const Route = createFileRoute('/projects/')({
   component: Projects,
 })
 
@@ -46,17 +46,26 @@ function Projects() {
                       GitHub
                     </a>
                   )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
-                  )}
+                  {project.liveUrl &&
+                    (project.liveUrl.startsWith('/') ? (
+                      <a
+                        href={project.liveUrl}
+                        className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                      >
+                        <ArrowRight size={16} />
+                        Read Case Study
+                      </a>
+                    ) : (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </a>
+                    ))}
                 </div>
               </CardContent>
             </Card>
