@@ -32,7 +32,7 @@ const strategy = [
   {
     number: '01',
     title: 'Narrative-Driven Multimedia',
-    body: 'Produced a series of promotional and tutorial videos that repositioned enforcement officers as "Digital Transformation Agents" assisting merchants directly on-site.',
+    body: 'Produced a series of promotional and tutorial videos that repositioned officers as "Digital Transformation Agents" assisting merchants directly on-site.',
   },
   {
     number: '02',
@@ -102,7 +102,7 @@ function DigitalLicensingCampaign() {
               Digital Licensing Awareness Campaign
             </h1>
             <p className="font-serif text-xl sm:text-2xl text-gray-400 italic">
-              &ldquo;Register First, Renew Next&rdquo;
+              &ldquo;Daftar Dulu, Baru Renew&rdquo;
             </p>
           </div>
           <div className="md:col-span-4 md:border-l md:border-gray-200 md:pl-8 flex flex-col justify-end gap-6 pt-6 md:pt-0">
@@ -168,7 +168,7 @@ function DigitalLicensingCampaign() {
             <p className="text-lg text-gray-600 mb-10 max-w-2xl">
               We structured the{' '}
               <span className="font-semibold text-gray-900">
-                &ldquo;Register First, Renew Next&rdquo;
+                &ldquo;Daftar Dulu, Baru Renew&rdquo;
               </span>{' '}
               campaign using a dual-layered approach.
             </p>
@@ -185,21 +185,6 @@ function DigitalLicensingCampaign() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Campaign Showcase */}
-        <section className="mb-16 sm:mb-24">
-          <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">
-            Campaign Showcase
-          </h2>
-          <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl bg-gray-100">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Register First, Renew Next campaign video"
-              className="absolute top-0 left-0 w-full h-full"
-              allowFullScreen
-            />
           </div>
         </section>
 

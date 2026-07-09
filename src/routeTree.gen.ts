@@ -14,9 +14,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AffiliatesRouteImport } from './routes/affiliates'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
-import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as ProjectsDigitalLicensingCampaignRouteImport } from './routes/projects/digital-licensing-campaign'
-import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 
 const ResumeRoute = ResumeRouteImport.update({
   id: '/resume',
@@ -43,31 +41,19 @@ const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
   path: '/projects/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjectsDigitalLicensingCampaignRoute =
   ProjectsDigitalLicensingCampaignRouteImport.update({
     id: '/projects/digital-licensing-campaign',
     path: '/projects/digital-licensing-campaign',
     getParentRoute: () => rootRouteImport,
   } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/affiliates': typeof AffiliatesRoute
   '/contact': typeof ContactRoute
   '/resume': typeof ResumeRoute
-  '/blog/$slug': typeof BlogSlugRoute
   '/projects/digital-licensing-campaign': typeof ProjectsDigitalLicensingCampaignRoute
-  '/blog/': typeof BlogIndexRoute
   '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -75,9 +61,7 @@ export interface FileRoutesByTo {
   '/affiliates': typeof AffiliatesRoute
   '/contact': typeof ContactRoute
   '/resume': typeof ResumeRoute
-  '/blog/$slug': typeof BlogSlugRoute
   '/projects/digital-licensing-campaign': typeof ProjectsDigitalLicensingCampaignRoute
-  '/blog': typeof BlogIndexRoute
   '/projects': typeof ProjectsIndexRoute
 }
 export interface FileRoutesById {
@@ -86,9 +70,7 @@ export interface FileRoutesById {
   '/affiliates': typeof AffiliatesRoute
   '/contact': typeof ContactRoute
   '/resume': typeof ResumeRoute
-  '/blog/$slug': typeof BlogSlugRoute
   '/projects/digital-licensing-campaign': typeof ProjectsDigitalLicensingCampaignRoute
-  '/blog/': typeof BlogIndexRoute
   '/projects/': typeof ProjectsIndexRoute
 }
 export interface FileRouteTypes {
@@ -98,9 +80,7 @@ export interface FileRouteTypes {
     | '/affiliates'
     | '/contact'
     | '/resume'
-    | '/blog/$slug'
     | '/projects/digital-licensing-campaign'
-    | '/blog/'
     | '/projects/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -108,9 +88,7 @@ export interface FileRouteTypes {
     | '/affiliates'
     | '/contact'
     | '/resume'
-    | '/blog/$slug'
     | '/projects/digital-licensing-campaign'
-    | '/blog'
     | '/projects'
   id:
     | '__root__'
@@ -118,9 +96,7 @@ export interface FileRouteTypes {
     | '/affiliates'
     | '/contact'
     | '/resume'
-    | '/blog/$slug'
     | '/projects/digital-licensing-campaign'
-    | '/blog/'
     | '/projects/'
   fileRoutesById: FileRoutesById
 }
@@ -129,9 +105,7 @@ export interface RootRouteChildren {
   AffiliatesRoute: typeof AffiliatesRoute
   ContactRoute: typeof ContactRoute
   ResumeRoute: typeof ResumeRoute
-  BlogSlugRoute: typeof BlogSlugRoute
   ProjectsDigitalLicensingCampaignRoute: typeof ProjectsDigitalLicensingCampaignRoute
-  BlogIndexRoute: typeof BlogIndexRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
 
@@ -172,25 +146,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projects/digital-licensing-campaign': {
       id: '/projects/digital-licensing-campaign'
       path: '/projects/digital-licensing-campaign'
       fullPath: '/projects/digital-licensing-campaign'
       preLoaderRoute: typeof ProjectsDigitalLicensingCampaignRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -201,9 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   AffiliatesRoute: AffiliatesRoute,
   ContactRoute: ContactRoute,
   ResumeRoute: ResumeRoute,
-  BlogSlugRoute: BlogSlugRoute,
   ProjectsDigitalLicensingCampaignRoute: ProjectsDigitalLicensingCampaignRoute,
-  BlogIndexRoute: BlogIndexRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport
